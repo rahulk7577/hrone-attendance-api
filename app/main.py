@@ -706,15 +706,7 @@ class PunchInIn(BaseModel):
         le=4102444800000,
     )
     status: Literal["PRESENT", "WFH", "ON_DUTY"] = "PRESENT"
-class PunchInIn(BaseModel):
-    emp_code: str
-    punched_at: int = Field(
-        default_factory=lambda: to_epoch_ms(datetime.now(timezone.utc)),
-        strict=True,
-        ge=100000000000,
-        le=4102444800000,
-    )
-    status: Literal["PRESENT", "WFH", "ON_DUTY"] = "PRESENT"
+
 
 
 class PunchOutIn(BaseModel):
